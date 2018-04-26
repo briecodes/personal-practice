@@ -1,0 +1,6 @@
+<h1><%= @book.title %>, <%= @book.written_date %></h1>
+<h2>Written by <%= @book.author.first_name %> <%= @book.author.last_name %></h2>
+<h4>Published by: </h4>
+
+<br><br>
+<p>Create a book <a href="books/<%= @book.id %>/edit">here</a> | <a href="/">Go Home</a></p>

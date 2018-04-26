@@ -1,0 +1,13 @@
+<h1>All Authors</h1>
+<br>
+<% if @authors.size > 0 %>
+  <ul>
+    <% @authors.each do |author| %>
+      <li><%= author.first_name %> <%= author.last_name %> | <a href="authors/<%= author.id %>">view</a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No authors just yet!</p>
+<% end %>
+  <br><br>
+  <p>Create an author <a href="authors/new">here</a> | <a href="/">Go Home</a></p>

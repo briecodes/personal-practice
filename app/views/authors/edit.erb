@@ -1,0 +1,28 @@
+<h1>Create a New Author</h1>
+
+<br>
+
+<form method="post" action="/authors/<%= @author.id %>">
+  <h3>Author Info</h3>
+  <p>
+    <label>
+      First Name:
+      <input type="text" name="first_name" value="<%= @author.first_name %>">
+    </label>
+  </p>
+  <p>
+    <label>
+    Last Name:
+      <input type="text" name="last_name" value="<%= @author.last_name %>">
+    </label>
+  </p>
+
+  <br><br>
+
+  <p><button id="submit">Update Author</button> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; <a href="/authors/<%= @author.id %>">Cancel</a></p>
+</form>
+<p>
+<form method="post" action="/authors/<%= @author.id %>/delete">
+  <button id="submit">Delete Author</button>
+</form>
+</p>

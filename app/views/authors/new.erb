@@ -1,0 +1,28 @@
+<h1>Create a New Author</h1>
+
+<br>
+
+<form method="post" action="/authors">
+  <h3>Author Info</h3>
+  <p>
+    <label>
+      First Name:
+      <input type="text" name="first_name">
+    </label>
+  </p>
+  <p>
+    <label>
+    Last Name:
+      <input type="text" name="last_name">
+    </label>
+  </p>
+
+  <!-- <h3>Associate Books</h3>
+  <% if @books.size > 0 %>
+    <% @books.each do |book| %>
+      <input type="checkbox" name="<%= book[book.id] %>"> <%= book.title %><br>
+    <% end %>
+  <% end %> -->
+  <br><br>
+  <p><button id="submit">Submit</button> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; <a href="/authors">Cancel</a></p>
+</form>

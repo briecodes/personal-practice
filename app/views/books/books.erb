@@ -1,0 +1,13 @@
+<h1>All Books</h1>
+<br>
+<% if @books.size > 0 %>
+  <ul>
+    <% @books.each do |book| %>
+      <li><%= book.title %>, by <%= book.author.first_name %> <%= book.author.last_name %> | <a href="books/<%= book.id %>">view</a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No books just yet!</p>
+<% end %>
+  <br><br>
+  <p>Create a book <a href="books/new">here</a> | <a href="/">Go Home</a></p>

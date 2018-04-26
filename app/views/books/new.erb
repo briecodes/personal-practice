@@ -1,0 +1,57 @@
+<h1>Create a New Book</h1>
+
+<br>
+
+<form method="post" action="/books">
+  <h3>Book Info</h3>
+
+  <p>
+    <label>Title: <input type="text" name="title"></label>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <label>Written In (Year): <input type="number" name="written_date"></label>
+  </p>
+
+  <% if @categories.size > 0 %>
+    Categories:
+    <% @categories.each do |cat| %>
+      <input type="checkbox" name="book[category_ids][]" value="<%= cat.id %>" id="<%= cat.id %>"> <%= cat.category %>&nbsp;&nbsp;
+    <% end %>
+  <% end %>
+  <br>
+  <label>Create a new Category: <input type="text" name="new_category"></label>
+
+
+  <br><br><br><br>
+
+  <h3>Author Info</h3>
+
+  <br>
+
+  <h4>Associate Current Author</h4>
+  <% if @authors.size > 0 %>
+    <select name="author_id">
+      <option>Select</option>
+      <% @authors.each do |author| %>
+        <option value="<%= author.id %>"><%= author.first_name %> <%= author.last_name %></option>
+      <% end %>
+    </select>
+  <% end %>
+
+  <br><br>
+
+  <h4>Associate New Author</h4>
+  <p>
+    <label>
+      First Name:
+      <input type="text" name="author[first_name]">
+    </label>
+  </p>
+  <p>
+    <label>
+      Last Name:
+      <input type="text" name="author[last_name]">
+    </label>
+  </p>
+
+  <p><button id="submit">Submit</button> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; <a href="/books">Cancel</a></p>
+</form>
